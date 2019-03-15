@@ -1,0 +1,11 @@
+pytest>=4.2.0        # for pytest unit test itself
+pytest-cov>=2.6.1    # for pytest unit test coverage report
+pytest-html>=1.20.0  # for unit test html report
+rope>=0.12.0         # for refactoring in Visual Studio Code
+pylint>=2.2.2        # for checking lint in Visual Studio Code
+autopep8>=1.4.3      # for checking in Visual Studio Code
+flake8-pytest>=1.3   # for debug
+jedi>=0.13.2         # for debug in emacs (elpy)
+yapf>=0.26.0         # for debug in emacs (elpy)
+black>=18.9b0        # for debug in emacs (elpy)
+epc>=0.0.5           # for debug in emacs (elpy)
