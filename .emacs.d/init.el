@@ -233,6 +233,7 @@
    python-pytest
    ;; yasnippet
    yasnippet-snippets
+   org-tree-slide
    )
   )
 
@@ -276,32 +277,10 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 (load "org-mode.el")
-
-;;company-mode global activation
-(add-hook 'after-init-hook 'global-company-mode)
-
-;;(pyenv-mode)
-(elpy-enable)
+(load "jedi-config.el")
 
 (use-package ein
   :ensure t)
-
-
-(defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
-
-(add-hook 'python-mode-hook 'my/python-mode-hook)
-
-;; enabled this block
-(require 'jedi-core)
-(setq jedi:complete-on-dot t)
-(setq jedi:use-shortcuts t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-to-list 'company-backends 'company-jedi)
-
-;;this two line will fix some key bidning error in elpy(in youtuble)
-(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
-(define-key global-map (kbd "C-c o") 'iedit-mode)
 
 ;; 이부분은 ssh 연결에 사용함
 (require 'ssh)
@@ -317,7 +296,6 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (require 'projectile)
-
 (projectile-global-mode)
 
 
@@ -329,13 +307,13 @@
 
 
 ;;; markdown mode
-;;(use-package markdown-mode
-;;  :ensure t
-;;  :commands (markdown-mode gfm-mode)
-;;  :mode (("README\\.md\\'" . gfm-mode)
-;;         ("\\.md\\'" . markdown-mode)
-;;         ("\\.markdown\\'" . markdown-mode))
-;;  :init (setq markdown-command "multimarkdown"))
+(use-package markdown-mode
+ :ensure t
+ :commands (markdown-mode gfm-mode)
+ :mode (("README\\.md\\'" . gfm-mode)
+        ("\\.md\\'" . markdown-mode)
+        ("\\.markdown\\'" . markdown-mode))
+ :init (setq markdown-command "multimarkdown"))
 
 ;;; Utilities
 (use-package google-translate
@@ -365,9 +343,9 @@
 ;;  :init
 ;;  (setq org-reveal-root "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/"))
 
-;;;Have to install
-;;(use-package org-tree-slide
-;;  :ensure t)
+Have to install
+(use-package org-tree-slide
+ :ensure t)
 
 ;;;have to install
 ;;(use-package ob-restclient
@@ -462,11 +440,6 @@
 ;;   (define-key org-mode-map (kbd "<return>") 'org-return-indent)
 ;; )
 
-
-;; (use-package org-bullets
-;;   :ensure t
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;;; multi term이 사용 가능하도록 확인 (shell로 zsh를 써야 하는지?)
 ;; (use-package multi-term
