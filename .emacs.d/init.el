@@ -32,9 +32,6 @@
 ;;(set-language-environment "Korean")
 ;;(setq default-korean-keyboard "3")
 (setq input-method-verbose-flag nil input-method-highlight-flag nil)
-;;(set-terminal-coding-system 'utf-8)
-;;(set-keyboard-coding-system 'utf-8)
-
 
 
 (setq initial-scratch-message nil)
