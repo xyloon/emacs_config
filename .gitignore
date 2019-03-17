@@ -13,4 +13,9 @@
 url
 transient
 .python-environments
+elpa
+ido.last
+projectile-bookmarks.eld
+.recentf
+.smex-items
 
