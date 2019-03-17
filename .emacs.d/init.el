@@ -236,6 +236,7 @@
    org-tree-slide
    ob-rust
    ob-restclient
+   ox-gfm
    )
   )
 

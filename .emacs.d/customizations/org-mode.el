@@ -68,7 +68,7 @@
   (eval-after-load "org"
     '(require 'ox-gfm nil t))
   (setq org-plantuml-jar-path
-        (expand-file-name "~/plantuml/plantuml.jar"))
+        (expand-file-name "~/potable_exec/plantuml.jar"))
 
   ;;yasnippet 하고 tab 충돌 해결
   (defun yas/org-very-safe-expand ()
