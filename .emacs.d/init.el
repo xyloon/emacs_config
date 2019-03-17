@@ -234,6 +234,8 @@
    ov
    ;; for python test
    python-pytest
+   ;; yasnippet
+   yasnippet-snippets
    )
   )
 
@@ -293,11 +295,12 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
-;; (require 'jedi-core)
-;; (setq jedi:complete-on-dot t)
-;; (setq jedi:use-shortcuts t)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (add-to-list 'company-backends 'company-jedi)
+;; enabled this block
+(require 'jedi-core)
+(setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-to-list 'company-backends 'company-jedi)
 
 ;;this two line will fix some key bidning error in elpy(in youtuble)
 (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
@@ -315,6 +318,11 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(require 'projectile)
+
+(projectile-global-mode)
+
 
 ;;(add-to-list 'exec-path "/usr/local/bin")
 
@@ -638,7 +646,7 @@
  '(elpy-test-runner (quote elpy-test-pytest-runner))
  '(package-selected-packages
    (quote
-    (flymake pyenv-mode-auto wttrin undo-tree elpy magit 4clojure use-package-ensure-system-package use-package))))
+    (yasnippet-snippets flymake pyenv-mode-auto wttrin undo-tree elpy magit 4clojure use-package-ensure-system-package use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
