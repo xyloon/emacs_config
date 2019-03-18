@@ -33,3 +33,4 @@
 )
 
 (add-hook 'python-mode-hook 'jedi-config:setup-keys)
+(setq jedi:get-in-function-call-timeout 10000000)
