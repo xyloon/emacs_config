@@ -97,3 +97,12 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+
+
+(when (require 'org-tree-slide nil t)
+  (global-set-key (kbd "<f8>") 'org-tree-slide-mode)
+  (global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
+  (org-tree-slide-simple-profile))
+
+;; (setq org-tree-slide-skip-outline-level 4)
