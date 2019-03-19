@@ -22,18 +22,11 @@
 (use-package try
 	:ensure t)
 
-(use-package which-key
-	:ensure t 
-	:config
-	(which-key-mode))
-
 
 ;; Korean Setting
 ;;(set-language-environment "Korean")
 ;;(setq default-korean-keyboard "3")
 (setq input-method-verbose-flag nil input-method-highlight-flag nil)
-
-
 (setq initial-scratch-message nil)
 (setq column-number-mode t)
 (set-keyboard-coding-system nil)

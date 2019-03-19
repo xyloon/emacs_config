@@ -72,4 +72,16 @@
 
 (setq electric-indent-mode nil)
 
+;;;; Emacs extend
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :init
+  (setq which-key-idle-delay 2)
+  (setq which-key-max-description-length 40)
+  (setq which-key-max-display-columns nil)
+  (which-key-setup-side-window-bottom)
+  (which-key-mode))
+
+
 (global-set-key (kbd "C-c /") 'comment-line)
