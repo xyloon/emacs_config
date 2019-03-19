@@ -281,9 +281,10 @@
 (load "setup-js.el")
 (load "org-mode.el")
 (load "jedi-config.el")
+(load "magit-config.el")
+(load "yasnippet-config.el")
+(load "other-programming-config.el")
 
-(use-package ein
-  :ensure t)
 
 ;; 이부분은 ssh 연결에 사용함
 (require 'ssh)
@@ -305,14 +306,6 @@
 ;;(add-to-list 'load-path "~/.emacs.d/themes")  
 
 
-;;; markdown mode
-(use-package markdown-mode
- :ensure t
- :commands (markdown-mode gfm-mode)
- :mode (("README\\.md\\'" . gfm-mode)
-        ("\\.md\\'" . markdown-mode)
-        ("\\.markdown\\'" . markdown-mode))
- :init (setq markdown-command "multimarkdown"))
 
 ;;; Utilities
 (use-package google-translate
@@ -342,11 +335,9 @@
 ;;  :init
 ;;  (setq org-reveal-root "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/"))
 
-
 ;;;have to install
 ;;(use-package ob-restclient
 ;;  :ensure t)
-
 
 
 ;;; multi term이 사용 가능하도록 확인 (shell로 zsh를 써야 하는지?)
@@ -362,49 +353,6 @@
 ;;           (lambda ()
 ;;             (define-key term-raw-map (kbd "C-j")
 ;;                (lookup-key (current-global-map) (kbd "C-j")))))
-
-
-;;Magit과 함께 이 부분을 살려야 함
-(defun auto-commit-files (list)
-  (interactive
-   (list (list (buffer-file-name (current-buffer)))))
-  "LIST to be auto commit"
-  (while list
-    (let* ((file (car list))
-           (file-buffer (get-file-buffer file)))
-      (when file-buffer
-        (set-buffer file-buffer)
-        (when (magit-anything-modified-p nil file)
-          (magit-call-git "add" file)
-          (magit-call-git "commit" "-m" (concat file " update"))
-          (magit-call-git "push" "origin")
-          (magit-refresh)
-          (print (concat file " is pushed!!!")))))
-    (setq list (cdr list))))
-
-(use-package magit
-  :commands magit-get-top-dir
-  :diminish auto-revert-mode
-  :ensure t
-  :init
-  ;; magit 오토 리버트시 버퍼의 브랜치명까지 갱신하도록
-  (setq auto-revert-check-vc-info t)
-  (with-eval-after-load 'info
-    (info-initialize)
-    (add-to-list 'Info-directory-list
-                 "~/.emacs.d/site-lisp/magit/Documentation/"))
-  ;;; 이맥스가 기본적으로 제공하는 Git 백엔드를 켜두면 매우 느려진다. magit만 쓴다.
-  (setq vc-handled-backends nil)
-  :config
-  (setq vc-follow-symlinks t)
-  (setq find-file-visit-truename t)
-  (setq magit-refresh-status-buffer 'switch-to-buffer)
-  (setq magit-rewrite-inclusive 'ask)
-  (setq magit-save-some-buffers t)
-  (setq magit-set-upstream-on-push 'askifnotset)
-  :bind
-  ("C-c m" . magit-status))
-
 
 ;;;
 ;; (use-package prodigy
@@ -535,30 +483,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-;;
-;; (defun cljs-node-repl ()
-;;   (interactive)
-;;   (inf-clojure "lein trampoline run -m clojure.main /Users/jungseungyang/.emacs.d/repl.clj"))
-
-(defun figwheel-repl ()
-  (interactive)
-  (inf-clojure "lein figwheel"))
-
-(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
-
-(add-to-list 'load-path "~/.emacs.d/elib")
-(load "coverage-mode")
-
-;; code checking via flymake
-;; set code checker here from "epylint", "pyflakes"
-;; (setq pycodechecker "pyflakes")
-;; (when (load "flymake" t)
-;;   (defun flymake-pycodecheck-init ()
-;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;;                        'flymake-create-temp-inplace))
-;;            (local-file (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name))))
-;;       (list pycodechecker (list local-file))))
-;;   (add-to-list 'flymake-allowed-file-name-masks
-;;                '("\\.py\\'" flymake-pycodecheck-init)))
