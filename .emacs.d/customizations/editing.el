@@ -84,4 +84,6 @@
   (which-key-mode))
 
 
+(defalias 'list-buffers 'ibuffer)
+
 (global-set-key (kbd "C-c /") 'comment-line)
