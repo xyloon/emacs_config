@@ -672,7 +672,7 @@
 
 
 
-* elpy, jedi, python configuration
+* elpy, jedi, python, flycheck configuration
 
 #+BEGIN_SRC emacs-lisp
 ;;company-mode global activation
@@ -709,6 +709,9 @@
 
 (add-hook 'python-mode-hook 'jedi-config:setup-keys)
 (setq jedi:get-in-function-call-timeout 10000000)
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 #+END_SRC
 
 

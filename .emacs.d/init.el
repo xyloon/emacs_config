@@ -28,6 +28,7 @@
    wttrin
    undo-tree
    elpy
+   flycheck
    magit
    ;; personal adding
    ansible
