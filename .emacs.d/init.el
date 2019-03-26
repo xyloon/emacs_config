@@ -87,6 +87,7 @@
    swiper
    ace-window
    counsel
+   git-gutter
    )
   )
 

@@ -620,8 +620,14 @@
 #+END_SRC
 
 
-* For magit configuration
+* For gitgutter configuration
+** for more configuration : https://github.com/syohex/emacs-git-gutter
+#+begin_src emacs-lisp
+;;(require 'git-gutter)
+;;(global-git-gutter-mode t)
+#+end_src
 
+* For magit configuration
 #+BEGIN_SRC emacs-lisp
 (defun auto-commit-files (list)
   (interactive
