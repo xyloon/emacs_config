@@ -89,6 +89,7 @@
    ace-window
    counsel
    git-gutter
+   py-autopep8
    )
   )
 
