@@ -91,6 +91,7 @@
    git-gutter
    py-autopep8
    smart-mode-line-powerline-theme
+   sphinx-doc
    )
   )
 
