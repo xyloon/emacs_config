@@ -10,3 +10,4 @@ yapf>=0.26.0         # for debug in emacs (elpy)
 black>=18.9b0        # for debug in emacs (elpy)
 epc>=0.0.5           # for debug in emacs (elpy)
 virtualenv>=16.4.3   # for emacs virtualenv
+importmagic>=0.1.7   # for auto import in emacs
