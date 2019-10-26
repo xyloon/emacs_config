@@ -136,6 +136,7 @@
  '(elpy-modules
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-flymake elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-autodoc elpy-module-sane-defaults)))
+ '(elpy-shell-use-project-root t)
  '(elpy-test-pytest-runner-command (quote ("py.test" "-s")))
  '(elpy-test-runner (quote elpy-test-pytest-runner))
  '(package-selected-packages
