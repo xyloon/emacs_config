@@ -115,6 +115,7 @@
 (require 'org)
 (org-babel-load-file (expand-file-name "~/.emacs.d/org_based_init.org"))
 
+(load "~/.emacs.d/password_gen.el")
 
 (provide 'init)
 ;;; init.el ends here
