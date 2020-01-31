@@ -13,3 +13,4 @@ virtualenv>=16.4.3   # for emacs virtualenv
 importmagic>=0.1.7   # for auto import in emacs
 doc8>=0.8.0          # for documentation
 sphinx>=2.0.1        # for documentation
+mypy

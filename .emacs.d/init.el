@@ -93,6 +93,7 @@
    smart-mode-line-powerline-theme
    sphinx-doc
    pyimport
+   flycheck-mypy
    )
   )
 
@@ -142,7 +143,7 @@
  '(elpy-test-runner (quote elpy-test-pytest-runner))
  '(package-selected-packages
    (quote
-    (pyimport counsel swiper ace-window tabbar yasnippet-snippets flymake pyenv-mode-auto wttrin undo-tree elpy magit 4clojure use-package-ensure-system-package use-package)))
+    (flycheck-mypy pyimport counsel swiper ace-window tabbar yasnippet-snippets flymake pyenv-mode-auto wttrin undo-tree elpy magit 4clojure use-package-ensure-system-package use-package)))
  '(sml/mode-width
    (if
        (eq

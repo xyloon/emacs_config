@@ -719,6 +719,10 @@
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
+(require 'flycheck-mypy)
+(add-hook 'python-mode-hook 'flycheck-mode)
+
+
 (setq flycheck-check-syntax-automatically '(save mode-enable))
 ;; the default value was '(save idle-change new-line mode-enabled)
 #+END_SRC
