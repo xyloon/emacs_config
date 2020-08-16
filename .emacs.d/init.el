@@ -26,7 +26,6 @@
 (defvar packages-to-install
   '(
    wttrin
-   undo-tree
    elpy
    flycheck
    magit
@@ -130,88 +129,67 @@
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(coffee-tab-width 2)
- '(company-auto-complete (quote ignore))
- '(custom-enabled-themes (quote (tomorrow-night-bright)))
+ '(company-auto-complete 'ignore)
+ '(custom-enabled-themes '(tomorrow-night-bright))
  '(custom-safe-themes
-   (quote
-    ("5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" default)))
+   '("5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" default))
  '(elpy-modules
-   (quote
-    (elpy-module-company elpy-module-eldoc elpy-module-flymake elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-autodoc elpy-module-sane-defaults)))
+   '(elpy-module-company elpy-module-eldoc elpy-module-flymake elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-autodoc elpy-module-sane-defaults))
  '(elpy-shell-use-project-root t)
- '(elpy-test-pytest-runner-command (quote ("py.test" "-s")))
- '(elpy-test-runner (quote elpy-test-pytest-runner))
+ '(elpy-test-pytest-runner-command '("py.test" "-s"))
+ '(elpy-test-runner 'elpy-test-pytest-runner)
  '(package-selected-packages
-   (quote
-    (flycheck-mypy pyimport counsel ace-window tabbar flymake pyenv-mode-auto wttrin elpy magit 4clojure use-package-ensure-system-package)))
- '(sml/mode-width
-   (if
-       (eq
-        (powerline-current-separator)
-        (quote arrow))
-       (quote right)
-     (quote full)))
+   '(flycheck-mypy pyimport counsel ace-window tabbar flymake pyenv-mode-auto wttrin elpy magit 4clojure use-package-ensure-system-package))
+ '(sml/mode-width (if (eq (powerline-current-separator) 'arrow) 'right 'full))
  '(sml/pos-id-separator
-   (quote
-    (""
+   '(""
      (:propertize " " face powerline-active1)
      (:eval
-      (propertize " "
-                  (quote display)
+      (propertize " " 'display
                   (funcall
                    (intern
                     (format "powerline-%s-%s"
                             (powerline-current-separator)
                             (car powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   (quote powerline-active2))))
-     (:propertize " " face powerline-active2))))
+                   'powerline-active1 'powerline-active2)))
+     (:propertize " " face powerline-active2)))
  '(sml/pos-minor-modes-separator
-   (quote
-    (""
+   '(""
      (:propertize " " face powerline-active1)
      (:eval
-      (propertize " "
-                  (quote display)
+      (propertize " " 'display
                   (funcall
                    (intern
                     (format "powerline-%s-%s"
                             (powerline-current-separator)
                             (cdr powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   (quote sml/global))))
-     (:propertize " " face sml/global))))
+                   'powerline-active1 'sml/global)))
+     (:propertize " " face sml/global)))
  '(sml/pre-id-separator
-   (quote
-    (""
+   '(""
      (:propertize " " face sml/global)
      (:eval
-      (propertize " "
-                  (quote display)
+      (propertize " " 'display
                   (funcall
                    (intern
                     (format "powerline-%s-%s"
                             (powerline-current-separator)
                             (car powerline-default-separator-dir)))
-                   (quote sml/global)
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
+                   'sml/global 'powerline-active1)))
+     (:propertize " " face powerline-active1)))
  '(sml/pre-minor-modes-separator
-   (quote
-    (""
+   '(""
      (:propertize " " face powerline-active2)
      (:eval
-      (propertize " "
-                  (quote display)
+      (propertize " " 'display
                   (funcall
                    (intern
                     (format "powerline-%s-%s"
                             (powerline-current-separator)
                             (cdr powerline-default-separator-dir)))
-                   (quote powerline-active2)
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
- '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes))))
+                   'powerline-active2 'powerline-active1)))
+     (:propertize " " face powerline-active1)))
+ '(sml/pre-modes-separator (propertize " " 'face 'sml/modes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
