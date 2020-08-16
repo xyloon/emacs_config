@@ -143,7 +143,7 @@
  '(elpy-test-runner (quote elpy-test-pytest-runner))
  '(package-selected-packages
    (quote
-    (flycheck-mypy pyimport counsel swiper ace-window tabbar yasnippet-snippets flymake pyenv-mode-auto wttrin undo-tree elpy magit 4clojure use-package-ensure-system-package use-package)))
+    (flycheck-mypy pyimport counsel ace-window tabbar flymake pyenv-mode-auto wttrin elpy magit 4clojure use-package-ensure-system-package)))
  '(sml/mode-width
    (if
        (eq
