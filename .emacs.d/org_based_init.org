@@ -905,12 +905,12 @@
 
 #+BEGIN_SRC emacs-lisp
 ;; 이부분은 ssh 연결에 사용함
-(require 'ssh)
-(add-hook 'ssh-mode-hook
-          (lambda ()
-            (setq ssh-directory-tracking-mode t)
-            (shell-dirtrack-mode t)
-            (setq dirtrackp nil)))
+;; (require 'ssh)
+;; (add-hook 'ssh-mode-hook
+;;           (lambda ()
+;;             (setq ssh-directory-tracking-mode t)
+;;             (shell-dirtrack-mode t)
+;;             (setq dirtrackp nil)))
 
 
 ;;(add-to-list 'exec-path "/usr/local/bin")

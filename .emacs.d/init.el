@@ -27,12 +27,11 @@
   '(
    wttrin
    elpy
-   flycheck
+   ;; flycheck
    magit
    ;; personal adding
    ansible
    4clojure
-   ssh
    ein
    company-jedi
    google-translate
@@ -70,7 +69,7 @@
    ;; rust mode
    rust-mode
    ;; multiple terminal management
-   multi-term
+   ;;multi-term
    ;;
    pyenv-mode-auto
    ;; requirement for coverage-mode 
@@ -87,7 +86,7 @@
    swiper
    ace-window
    counsel
-   git-gutter
+   ;; git-gutter
    py-autopep8
    smart-mode-line-powerline-theme
    sphinx-doc
@@ -115,7 +114,7 @@
 (require 'org)
 (org-babel-load-file (expand-file-name "~/.emacs.d/org_based_init.org"))
 
-(load "~/.emacs.d/password_gen.el")
+;;;(load "~/.emacs.d/password_gen.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -129,7 +128,7 @@
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(coffee-tab-width 2)
- '(company-auto-complete 'ignore)
+ '(company-auto-commit 'ignore)
  '(custom-enabled-themes '(tomorrow-night-bright))
  '(custom-safe-themes
    '("5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" default))
