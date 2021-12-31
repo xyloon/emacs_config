@@ -19,3 +19,4 @@ projectile-bookmarks.eld
 .recentf
 .smex-items
 .emacs.d/elpy
+.emacs.d/eln-cache
