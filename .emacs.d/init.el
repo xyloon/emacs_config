@@ -114,7 +114,8 @@
 (require 'org)
 (org-babel-load-file (expand-file-name "~/.emacs.d/org_based_init.org"))
 
-(load "~/.emacs.d/password-generator.el")
+;;(load "~/.emacs.d/password_gen.el")
+(load "~/.emacs.d/password_generator.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -128,7 +129,7 @@
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(coffee-tab-width 2)
- '(company-auto-commit 'ignore)
+ '(company-insertion-on-trigger 'ignore)
  '(custom-enabled-themes '(tomorrow-night-bright))
  '(custom-safe-themes
    '("5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" default))
